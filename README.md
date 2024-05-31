@@ -1,7 +1,7 @@
 # DDL and SELECT Query Generator
 
 This project contains a Python script that generates DDL statements for a target database based on the schema of a
-source database. Additionally, it generates SELECT queries for each column from the source table. The data type mapping
+source database. Additionally, it generates SELECT queries for each column from the source table(*only for HANA Database*). The data type mapping
 is handled using SQLAlchemy DB API. The source and target table names are provided in an Excel file, and the script
 reads paths from a YAML configuration file.
 
