@@ -5,6 +5,9 @@ source database. Additionally, it generates SELECT queries for each column from 
 is handled using SQLAlchemy DB API. The source and target table names are provided in an Excel file, and the script
 reads paths from a YAML configuration file.
 
+*Currently it supports transpiling of table definition between HANA and Snowflake but can be easily extended any other databases supported by SqlAchemy. For additional databases we need to maintain connection string in the file `db_engine.py`*
+
+
 ## Features
 
 - Generates DDL statements for the target database.
