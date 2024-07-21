@@ -75,7 +75,7 @@ directory.
 
 ## Contact
 
-For any inquiries, create issue in GitHub.
+For any inquiries, create issue in GitHub. 
 
 
 
