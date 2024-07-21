@@ -75,7 +75,7 @@ directory.
 
 ## Contact
 
-For any inquiries, please contact godpt@illumina.com 
+For any inquiries, create issue in GitHub.
 
 
 
