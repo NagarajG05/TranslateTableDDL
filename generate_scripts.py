@@ -1,9 +1,8 @@
 # from sqlalchemy.dialects import snowflake
 import os
+import pandas as pd
 import shutil
 from datetime import datetime
-
-import pandas as pd
 from sqlalchemy import MetaData, Column, String, text, Table, TIMESTAMP, VARCHAR
 from sqlalchemy.schema import CreateTable
 
@@ -15,7 +14,8 @@ from sql_queries import HANA_COLUMN_QRY
 class TableMigration:
     invalid_types_mapping = {'SECONDDATE': TIMESTAMP,
                              'NCLOB': lambda: VARCHAR(16777216),
-                             'CLOB': lambda: VARCHAR(16777216)
+                             'CLOB': lambda: VARCHAR(16777216),
+                             'VARBINARY': lambda: VARCHAR(16777216)
                              }
 
     def __init__(self, yaml_file_path, credential_path):

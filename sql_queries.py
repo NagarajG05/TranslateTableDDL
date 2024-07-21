@@ -10,7 +10,7 @@ GROUP BY view_name
 UNION
 
 SELECT 
-string_agg('"' || column_name ||'"' ,',')
+string_agg('"' || column_name ||'"' ,',') as col
 FROM "PUBLIC"."TABLE_COLUMNS"
 WHERE table_name = :view_name  and schema_name = :schema_name
 GROUP BY table_name

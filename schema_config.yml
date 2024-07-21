@@ -1,17 +1,17 @@
 target: snowflake
-source_file: C:/Users/Downloads/demo/schema_file.xlsx    #CBELTTablesToIngest.xlsx  #schema_file.xlsx   #
-result_file: C:/Users/Downloads/demo/
+source_file: C:/Users/Downloads/demo/schema_file.xlsx
+result_file: C:/Users/Downloads/demo/                       # folder where generated DDL and logs stored
 table_types:
   stage:
     prefix: STG_
-    #    suffix: _abc
+    suffix: _temp
     default_cols_position: end
-    default_cols: [ META_SRC_NM VARCHAR(16777216), META_CRC_NUM VARCHAR(16777216), META_UPD_DT VARCHAR(16777216), META_RECORD_HASH VARCHAR(16777216) ]
+    default_cols: [ META_SOURCENAME VARCHAR(16777216),  META_UPDATED_AT VARCHAR(16777216), META_HASHKEY VARCHAR(16777216) ]
   data_lake:
     prefix: DL_
-    #    suffix: _xyz
+    suffix: _raw
     default_cols_position: end
-    default_cols: [ META_SRC_NM VARCHAR(16777216),META_RECORD_HASH VARCHAR(16777216),META_CREATED_BY VARCHAR(16777216),META_UPDATED_BY VARCHAR(16777216),META_CREATE_TS TIMESTAMP_NTZ(9),META_UPDATE_TS TIMESTAMP_NTZ(9) ]
+    default_cols: [ META_SOURCENAME VARCHAR(16777216),  META_UPDATED_AT TIMESTAMP_NTZ(9), META_HASHKEY VARCHAR(16777216),META_CREATED_AT TIMESTAMP_NTZ(9) ]
 
 column_names: uppercase   #current, lowercase
-column_length: 16777216   #
+column_length: 16777216   #length for string types, default current
