@@ -89,7 +89,7 @@ class TableMigration:
                             default_cols = table_type_properties.get('default_cols', [])
                             if not isinstance(default_cols, list):
                                 default_cols = [default_cols]
-                            target_table_name = f"{prefix}{target_table}{suffix}"
+                            target_table_name = f"{prefix or ''}{target_table}{suffix or ''}"
                             self.generate_script_for_table_type(source_table_object, target_schema, target_table_name,
                                                                 build_table=build,
                                                                 default_cols=default_cols,
